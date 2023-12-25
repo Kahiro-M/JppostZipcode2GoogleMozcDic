@@ -12,6 +12,12 @@ def toDic(inputFile):
         ],index=['zip','address','type']).transpose()
     dic.to_csv('JpPostDic.txt', index=False, header=False, sep='\t')
 
+    dicWithHyphen = pd.DataFrame([
+        zipcode[2].str[:3]+'-'+zipcode[2].str[3:],
+        zipcode[6].replace('0','')+zipcode[7].replace('0','')+zipcode[8].replace('0',''),
+        type[0]
+        ],index=['zip','address','type']).transpose()
+    dicWithHyphen.to_csv('JpPostDicWithHyphen.txt', index=False, header=False, sep='\t')
 
 
 # 使用例
