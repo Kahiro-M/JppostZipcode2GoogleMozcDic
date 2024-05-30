@@ -1,1 +1,1 @@
-pyinstaller --onefile --icon=icon.ico postcode2dic.py
+pyinstaller --onefile --icon=icon.ico postcode2dic.py --noconsole
